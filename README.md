@@ -53,21 +53,20 @@ The application uses two main models:
 
 ### Training the Object Classification Model
 
-1. Prepare your dataset:
-   - Create a directory structure:
-     ```
-     dataset/
-     ├── train/
-     │   ├── class1/
-     │   ├── class2/
-     │   └── ...
-     └── test/
-         ├── class1/
-         ├── class2/
-         └── ...
-     ```
-   - Place your training images in appropriate class folders
-   - Ensure images are in JPG/PNG format
+1. The dataset is already prepared with the following structure:
+   ```
+   backend/dataset/
+   ├── defective/        # Defective samples
+   │   ├── damaged road surface/  # Damaged road images
+   │   ├── defective ropes/      # Defective rope images
+   │   └── defective wood/       # Defective wood images
+   └── non_defective/    # Non-defective samples
+       ├── good road surface/    # Good road images
+       ├── good ropes/          # Good rope images
+       │   ├── undefected cables/  # Good cable images
+       │   └── undefected ropes/   # Good rope images
+       └── good wood/           # Good wood images
+   ```
 
 2. Train the model:
 ```bash
@@ -79,19 +78,20 @@ python train_object_model.py
 
 ### Training the Defect Detection Model
 
-1. Prepare your dataset:
-   - Create a directory structure:
-     ```
-     dataset/
-     ├── train/
-     │   ├── normal/
-     │   └── defective/
-     └── test/
-         ├── normal/
-         └── defective/
-     ```
-   - Place your training images in appropriate folders
-   - Ensure images are in JPG/PNG format
+1. The dataset is already prepared with the following structure:
+   ```
+   backend/dataset/
+   ├── defective/        # Defective samples
+   │   ├── damaged road surface/  # Damaged road images
+   │   ├── defective ropes/      # Defective rope images
+   │   └── defective wood/       # Defective wood images
+   └── non_defective/    # Non-defective samples
+       ├── good road surface/    # Good road images
+       ├── good ropes/          # Good rope images
+       │   ├── undefected cables/  # Good cable images
+       │   └── undefected ropes/   # Good rope images
+       └── good wood/           # Good wood images
+   ```
 
 2. Train the model:
 ```bash
